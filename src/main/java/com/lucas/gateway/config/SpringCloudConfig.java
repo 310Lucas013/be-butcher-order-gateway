@@ -11,17 +11,17 @@ public class SpringCloudConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/credentials/**")
-                        .uri("http://localhost:6002/"))
+                        .uri("http://credentials:8080/"))
                 .route(r -> r.path("/customer/**")
-                        .uri("http://localhost:6003/"))
+                        .uri("http://customer:8080/"))
                 .route(r -> r.path("/location/**")
-                        .uri("http://localhost:6004/"))
+                        .uri("http://location:8080/"))
                 .route(r -> r.path("/butcher/**")
-                        .uri("http://localhost:6005/"))
+                        .uri("http://butcher:8080/"))
                 .route(r -> r.path("/order/**")
-                        .uri("http://localhost:6006/"))
+                        .uri("http://order:8080/"))
                 .route(r -> r.path("/product/**")
-                        .uri("http://localhost:6007/"))
+                        .uri("http://product:8080/"))
                 .build();
     }
 }
